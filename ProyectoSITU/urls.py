@@ -19,11 +19,13 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from appSITUweb.views import *
+from django.contrib.staticfiles.urls import static
 
 
 urlpatterns = [
     path('', home_view, name='home'),
     path('admin/', admin.site.urls),
     path('pasajeros/', pasajeros, name='pasajeros'),
-    path('pasajerosEdit/<id>', pasajerosEdit, name='pasajerosEdit')
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('pasajerosEdit/<id>', pasajerosEdit, name='pasajerosEdit'),
+    path('pasajerosCreate', pasajerosCreate, name='pasajerosCreate'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

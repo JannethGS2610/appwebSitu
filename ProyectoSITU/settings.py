@@ -129,6 +129,9 @@ STATICFILES_DIRS = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
+MEDIA_ROOT = os.path.join(BASE_DIR, '');
+MEDIA_URL = '/imagenes/'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

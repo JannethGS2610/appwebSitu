@@ -30,3 +30,10 @@ def pasajerosEdit(request, id):
             return redirect(to="pasajeros")
 
     return render(request,'pasajerosEdit.html',data)
+
+def pasajerosCreate(request):
+    formulario = PasajeroFormulario(request.POST or None, request.FILES)
+    if (formulario.is_valid()):
+        formulario.save()
+        return redirect('pasajeros')
+    return render(request, 'pasajerosCreate.html', {'formulario': formulario})

@@ -6,7 +6,7 @@ from .models import Viaje
 from . models import SimularAccesoPago
 
 class AdminPasajero(admin.ModelAdmin):
-    list_display = ["__str__","nombre","apellido","cedula","email"]	
+    list_display = ["__str__","nombre","apellido","cedula","email","imagen"]	
     class Meta(object):
 	      model = Pasajero
 
